@@ -7,9 +7,11 @@ import Product from '../pages/Product/Product';
 import LifeCycleComp from '../pages/LifeCycleComp/LifeCycleComp';
 import BlogPost from '../pages/BlogPost/BlogPost';
 import YouTubeCompPage from '../pages/YouTubeCompPage/YouTubeCompPage';
+import DetailPost from '../pages/BlogPost/DetailPost/DetailPost';
 
 // Style
 import './Home.css';
+
 
 class Home extends Component {
 
@@ -28,10 +30,11 @@ class Home extends Component {
                         <Link to="/youtube-component">YouTube</Link>
                     </div>
                     <Route path="/" exact component={BlogPost} />
+                    <Route path="/detail-post/:PostID" component={DetailPost}/>
                     <Route path="/product" component={Product} />
                     <Route path="/lifecycle" component={LifeCycleComp} />
                     <Route path="/youtube-component" component={YouTubeCompPage}/>
-                </Fragment>
+                </Fragment> 
             
             </Router>                        
         )

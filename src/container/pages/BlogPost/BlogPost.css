@@ -52,6 +52,10 @@
     color: #4a4a4a;
 }
 
+.content p.title:hover{
+    cursor: pointer;
+}
+
 .remove{
     padding: 12px 18px;
     background: red;
