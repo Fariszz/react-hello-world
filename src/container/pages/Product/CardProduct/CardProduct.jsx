@@ -1,4 +1,5 @@
 import React, { Component,Fragment } from 'react';
+import Counter from './Counter';
 
 class CardProduct extends Component{
 
@@ -36,12 +37,8 @@ class CardProduct extends Component{
                     <img src="https://img-global.cpcdn.com/recipes/a1f24057e82b4939/680x482cq70/ayam-bumbu-merah-foto-resep-utama.jpg" alt="" width="400"/>
                 </div>
                 <p className="product-title">Daging ayam Berbumbu Rasa Original</p>
-                <p className="product-price">Rp. 410.000</p>
-                <div className="counter">
-                    <button className="minus" onClick={this.handleMinus}>-</button>
-                    <input type="text" value={this.state.order} />
-                    <button className="plus" onClick={this.handlePlus}>+</button>
-                </div>
+                <p className="product-price">Rp. 410.000</p>     
+                <Counter onCounterChange={(value) => this.props.onCounterChange(value)}/>           
             </div>                        
         )
     }
