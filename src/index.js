@@ -1,14 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import YouTubeComp from './component/YouTubeComp/YouTubeComp';
 import Home from './container/Home/Home';
+import { createStore } from 'redux';
+import {Provider} from 'react-redux';
+
+const globalState = {
+    totalOrder: 5
+}
+
+// Reducer
+const rootReducer = (state = globalState, action) =>{
+    return state;
+}
+
+// Store
+const storeRedux = createStore(rootReducer)
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <Provider store={storeRedux}><Home /></Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
