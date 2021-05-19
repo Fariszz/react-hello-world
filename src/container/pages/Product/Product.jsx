@@ -2,7 +2,8 @@ import React, { Component,Fragment } from 'react';
 import './Product.css';
 import CardProduct from './CardProduct/CardProduct';
 import {connect} from 'react-redux';
-import {RootContext} from '../../Home/Home';
+import { GlobalConsumer } from '../../context/context';
+
 
 class Product extends Component{
 
@@ -19,11 +20,7 @@ class Product extends Component{
 
     render(){
         return(
-            <RootContext.Consumer>
-            {
-                value => {
-                    return (
-                        <Fragment>
+            <Fragment>
                             <p>Halaman Product</p>
                             <hr />
                                 <div className="header">
@@ -32,18 +29,11 @@ class Product extends Component{
                                     </div>
                                     <div className="troley">
                                         <img src="https://etanee.id/img/icon/ic_cart_white.svg" alt=""/>
-                                        <div className="count">{value.state.totalOrder}</div>
+                                        <div className="count">{this.props.state.totalOrder}</div>
                                     </div>
                                 </div>
                             <CardProduct/>
-                        </Fragment>
-                    )
-                }
-            }
-                
-            </RootContext.Consumer>
-            
-            
+                        </Fragment>                                
         )
     }
 }
@@ -54,5 +44,5 @@ class Product extends Component{
 //     }
 // }
 
-export default Product;
+export default GlobalConsumer(Product);
 // export default connect(mapStateToProps) (Product);
