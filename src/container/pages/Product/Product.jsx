@@ -27,7 +27,7 @@ class Product extends Component{
                     </div>
                     <div className="troley">
                         <img src="https://etanee.id/img/icon/ic_cart_white.svg" alt=""/>
-                        <div className="count">{this.props.order}</div>
+                        <div className="count">{0}</div>
                     </div>
                 </div>
                 <CardProduct/>
@@ -43,4 +43,5 @@ const mapStateToProps = state =>{
     }
 }
 
-export default connect(mapStateToProps) (Product);
+export default Product;
+// export default connect(mapStateToProps) (Product);

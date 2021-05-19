@@ -1,5 +1,5 @@
 // Libraries
-import React, {Component, Fragment} from 'react';
+import React, {Component, Fragment, createContext} from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 // pages
@@ -12,16 +12,21 @@ import DetailPost from '../pages/BlogPost/DetailPost/DetailPost';
 // Style
 import './Home.css';
 
+export const RootContext = createContext();
+const Provider = RootContext.Provider;
+
 
 class Home extends Component {
 
     state = {
-        showComponent: true
+        // showComponent: true 
+        totalOrder: 5
     }
     
     render(){
         return(
             <Router>               
+            <Provider value={this.state}>
                 <Fragment>
                     <div className="navigation">
                         <Link to="/">Blog Post</Link>
@@ -35,7 +40,7 @@ class Home extends Component {
                     <Route path="/lifecycle" component={LifeCycleComp} />
                     <Route path="/youtube-component" component={YouTubeCompPage}/>
                 </Fragment> 
-            
+            </Provider>                            
             </Router>                        
         )
     }
